@@ -52,6 +52,7 @@ const goDoc = () => {
         z-index: 2;
         margin-top: 250px;
 
+
         h1 {
             font-size: 40px;
             font-weight: 700;
@@ -72,7 +73,6 @@ const goDoc = () => {
             a {
                 cursor: pointer;
                 border-radius: 20px;
-                // border: 1px solid rgb(255, 213, 213);
                 padding: 10px 20px;
                 background-color: rgb(255, 237, 224);
             }
@@ -82,6 +82,13 @@ const goDoc = () => {
                 box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.75);
             }
         }
+    }
+}
+
+@media (max-width: 550px) {
+    .home-page::after {
+        width: 150%;
+        height: 80%;
     }
 }
 </style>
