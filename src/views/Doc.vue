@@ -4,13 +4,13 @@
         <div class="content">
             <aside v-if="asideVisible">
                 <ul>
-                    <li>1</li>
-                    <li>2</li>
+                    <li><router-link to="/doc/switch">switch</router-link></li>
+                    <li><router-link to="/doc/dialog">dialog</router-link></li>
                     <li>3</li>
                     <li>4</li>
                 </ul>
             </aside>
-            <main>主内容</main>
+            <main><router-view></router-view></main>
         </div>
     </div>
 </template>
@@ -50,6 +50,13 @@ const asideVisible = inject<Ref<boolean>>("asideVisible");
                     display: flex;
                     align-items: center;
                     padding-left: 40px;
+
+                    >a {
+                        text-decoration: unset;
+                        color: #333;
+                        width: 100%;
+                        padding: 20px 0px;
+                    }
                 }
 
                 >li:hover {
@@ -64,6 +71,19 @@ const asideVisible = inject<Ref<boolean>>("asideVisible");
             background-color: rgba(239, 246, 255, 0.7);
             padding: 20px;
         }
+    }
+}
+
+@media (max-width: 550px) {
+    aside {
+        position: absolute;
+        z-index: 1;
+    }
+
+    main {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 80px);
     }
 }
 </style>
